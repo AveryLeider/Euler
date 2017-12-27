@@ -1,0 +1,43 @@
+<title>
+Learning JavaScript
+</title>
+</head>
+<body>
+<h1>Learning JavaScript</h1>
+<p>This is Problem 3 from Project Euler Net.</p>
+<h2>Largest Prime Factor of 600851475143</h2>
+
+
+<script>
+
+var testNumber = 600851475143;	
+var maxFactor = Math.sqrt(testNumber);
+
+function findPrime(numberToCheck){
+	for(var divisor=2; divisor <= Math.sqrt(numberToCheck); divisor++){
+		if (numberToCheck % divisor === 0){
+			return false;
+		}
+	}
+
+	return true;
+}
+
+//take testNumber, find its square root (floor or ceiling), count down by increments of 1, figure out if the divisor has zero modulo with testNumber, if true it is a factor, and then run function findPrime to see if it is a prime as well as a factor.  Print answer to screen. 
+maxFactor =Math.floor(maxFactor);
+for(var divisor = maxFactor; divisor >= 1; divisor--){
+	if(testNumber % divisor ===0){
+		if (findPrime(divisor)){
+			document.write(divisor + " is a prime factor <br/>")
+		}
+
+	}
+	
+}
+
+
+</script>
+
+
+</body>
+</html>
