@@ -1,0 +1,54 @@
+<title>
+JavaScript with Will
+</title>
+</head>
+<body>
+<h1>Learning to Program using JavaScript with Will</h1>
+<p>This is Problem 4 from Project Euler Net.</p>
+<h2>Largest Palindrome Product of two 3-digit numbers</h2>
+
+<p> A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99. </p>
+
+<h2>Find the largest palindrome made from the product of two 3-digit numbers.</h2>
+ <p> The parseInt() function parses a string and returns an integer. </p>
+ <p> The toString() method returns a boolean value as a string. <p>
+ <p> The split() method is used to split a string into an array of substrings, and returns the new array. Tip: If an empty string ("") is used as the separator, the string is split between each character.</p>
+ <p>The reverse() method reverses an array in place. The first array element becomes the last and the last becomes the first. </p>
+ <p>The join() method joins all elements of an array into a string.</p>
+ <p> So</p>
+
+<script>
+	
+
+function palindrome(x) {
+    var pal = parseInt(x.toString().split('').reverse().join(''));
+
+    if (pal === x)
+        return true;
+    else
+        return false;
+}
+var largestPal = 0;
+var x = 999;
+var y = 999;
+var product = x * y;
+
+for (var x; x >100; x--) {
+    for (var y = x; y > 100; y--) {
+        product = x * y;
+        
+        if (palindrome(product)) {
+        	if(product >largestPal){
+        		largestPal = product
+        	}
+          
+        }
+    }
+   
+}
+document.write('Answer is ' + largestPal);
+</script>
+
+
+</body>
+</html>
