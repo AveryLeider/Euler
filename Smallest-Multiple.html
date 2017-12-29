@@ -1,0 +1,42 @@
+<title>
+JavaScript with Will
+</title>
+</head>
+<body>
+<h1>Learning to Program using JavaScript with Will</h1>
+<p>This is Problem 5 from Project Euler Net.</p>
+<
+
+<h2>Smallest Multiple.</h2>
+
+ <p> 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.</p>
+
+<p>What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?</p>
+
+<script>
+	var maxDivisor = 20;
+
+	function evenlyDivisible(testNumber){
+
+		for(var divisor = 1; divisor <= maxDivisor; divisor++){
+			if (testNumber%divisor !==0){
+				return false;
+
+			}
+		}
+		return true;
+	}
+	
+
+    for(var number = maxDivisor; number <=Number.MAX_SAFE_INTEGER; number += maxDivisor){
+    	if (evenlyDivisible(number)){
+    		document.write(number);
+    		break;
+    	}
+    }
+
+</script>
+
+
+</body>
+</html>
